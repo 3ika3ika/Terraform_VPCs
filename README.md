@@ -1,2 +1,4 @@
-# Terraform_personal_project
-# Terraform_personal_project
+Add your values in all variables.tf files in the project:
+access key value 
+secret key value 
+AWS id of owner 
