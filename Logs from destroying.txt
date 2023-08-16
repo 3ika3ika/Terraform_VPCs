@@ -1,0 +1,493 @@
+module.vpc_c.aws_vpc.vpc: Refreshing state... [id=vpc-0806fa543d14a70a9]
+module.single_account_multi_region.data.aws_caller_identity.this: Reading...
+module.single_account_multi_region.data.aws_region.this: Reading...
+module.single_account_multi_region.data.aws_region.this: Read complete after 0s [id=eu-west-2]
+module.vpc_c.aws_subnet.pri_sub[1]: Refreshing state... [id=subnet-03a06bec073c3c267]
+module.vpc_c.aws_route_table.private[0]: Refreshing state... [id=rtb-0f7cd6dd01b742c22]
+module.vpc_c.aws_subnet.pri_sub[0]: Refreshing state... [id=subnet-07ad1fb676affdfbd]
+module.single_account_multi_region.data.aws_route_tables.this_vpc_rts: Reading...
+module.single_account_multi_region.data.aws_vpc.this_vpc: Reading...
+module.vpc_c.aws_route_table_association.private_assosiaciton[1]: Refreshing state... [id=rtbassoc-0f0b1f96a006b90d8]
+module.vpc_c.aws_route_table_association.private_assosiaciton[0]: Refreshing state... [id=rtbassoc-0aca568ee95ee2b55]
+module.single_account_multi_region.data.aws_caller_identity.this: Read complete after 1s [id=089633309135]
+module.single_account_multi_region.data.aws_route_tables.this_vpc_rts: Read complete after 1s [id=eu-west-2]
+module.single_account_multi_region.data.aws_vpc.this_vpc: Read complete after 1s [id=vpc-0806fa543d14a70a9]
+module.single_account_multi_region.data.aws_region.peer: Reading...
+module.single_account_multi_region.data.aws_caller_identity.peer: Reading...
+module.single_account_multi_region.data.aws_region.peer: Read complete after 0s [id=eu-west-1]
+module.vpc_b.aws_vpc.vpc: Refreshing state... [id=vpc-0fd583869daf5bc7d]
+module.single_account_multi_region.data.aws_caller_identity.peer: Read complete after 1s [id=089633309135]
+module.vpc_b.aws_route_table.public[0]: Refreshing state... [id=rtb-0855567647bdc1f55]
+module.vpc_b.aws_subnet.pub_sub[0]: Refreshing state... [id=subnet-02194acc4453c6555]
+module.vpc_b.aws_route_table.private[0]: Refreshing state... [id=rtb-05c873edcf355e4a1]
+module.vpc_b.aws_subnet.pub_sub[1]: Refreshing state... [id=subnet-0c68212ffae06731e]
+module.single_account_multi_region.data.aws_route_tables.peer_vpc_rts: Reading...
+module.single_account_multi_region.data.aws_vpc.peer_vpc: Reading...
+module.vpc_b.aws_subnet.pri_sub[0]: Refreshing state... [id=subnet-0c1b1589fb743dc49]
+module.vpc_b.aws_subnet.pri_sub[1]: Refreshing state... [id=subnet-0f9253920a24d8a6b]
+module.single_account_multi_region.aws_vpc_peering_connection.this: Refreshing state... [id=pcx-0624439ec5fdbae39]
+module.single_account_multi_region.aws_vpc_peering_connection_accepter.peer_accepter: Refreshing state... [id=pcx-0624439ec5fdbae39]
+module.vpc_c.aws_route.this_routes: Refreshing state... [id=r-rtb-0f7cd6dd01b742c2228674781]
+module.vpc_b.aws_route_table_association.public_assosiaciton[0]: Refreshing state... [id=rtbassoc-00cbc18266900e5d8]
+module.vpc_b.aws_route_table_association.public_assosiaciton[1]: Refreshing state... [id=rtbassoc-0eaf959387cdf9f13]
+module.vpc_b.aws_route.this_routes: Refreshing state... [id=r-rtb-05c873edcf355e4a1943240730]
+module.vpc_b.aws_route_table_association.private_assosiaciton[1]: Refreshing state... [id=rtbassoc-020af4637bce4bf65]
+module.vpc_b.aws_route_table_association.private_assosiaciton[0]: Refreshing state... [id=rtbassoc-031e85f22a62bca21]
+module.single_account_multi_region.data.aws_route_tables.peer_vpc_rts: Read complete after 1s [id=eu-west-1]
+module.single_account_multi_region.aws_vpc_peering_connection_options.accepter: Refreshing state... [id=pcx-0624439ec5fdbae39]
+module.single_account_multi_region.aws_vpc_peering_connection_options.this: Refreshing state... [id=pcx-0624439ec5fdbae39]
+module.single_account_multi_region.data.aws_vpc.peer_vpc: Read complete after 2s [id=vpc-0fd583869daf5bc7d]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
+symbols:
+  - destroy
+
+Terraform will perform the following actions:
+
+  # module.single_account_multi_region.aws_vpc_peering_connection.this will be destroyed
+  - resource "aws_vpc_peering_connection" "this" {
+      - accept_status = "active" -> null
+      - id            = "pcx-0624439ec5fdbae39" -> null
+      - peer_owner_id = "089633309135" -> null
+      - peer_region   = "eu-west-1" -> null
+      - peer_vpc_id   = "vpc-0fd583869daf5bc7d" -> null
+      - tags          = {} -> null
+      - tags_all      = {} -> null
+      - vpc_id        = "vpc-0806fa543d14a70a9" -> null
+
+      - accepter {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+
+      - requester {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+    }
+
+  # module.single_account_multi_region.aws_vpc_peering_connection_accepter.peer_accepter will be destroyed
+  - resource "aws_vpc_peering_connection_accepter" "peer_accepter" {
+      - accept_status             = "active" -> null
+      - auto_accept               = true -> null
+      - id                        = "pcx-0624439ec5fdbae39" -> null
+      - peer_owner_id             = "089633309135" -> null
+      - peer_region               = "eu-west-1" -> null
+      - peer_vpc_id               = "vpc-0fd583869daf5bc7d" -> null
+      - tags                      = {} -> null
+      - tags_all                  = {} -> null
+      - vpc_id                    = "vpc-0806fa543d14a70a9" -> null
+      - vpc_peering_connection_id = "pcx-0624439ec5fdbae39" -> null
+
+      - accepter {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+
+      - requester {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+    }
+
+  # module.single_account_multi_region.aws_vpc_peering_connection_options.accepter will be destroyed
+  - resource "aws_vpc_peering_connection_options" "accepter" {
+      - id                        = "pcx-0624439ec5fdbae39" -> null
+      - vpc_peering_connection_id = "pcx-0624439ec5fdbae39" -> null
+
+      - accepter {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+
+      - requester {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+    }
+
+  # module.single_account_multi_region.aws_vpc_peering_connection_options.this will be destroyed
+  - resource "aws_vpc_peering_connection_options" "this" {
+      - id                        = "pcx-0624439ec5fdbae39" -> null
+      - vpc_peering_connection_id = "pcx-0624439ec5fdbae39" -> null
+
+      - accepter {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+
+      - requester {
+          - allow_remote_vpc_dns_resolution = true -> null
+        }
+    }
+
+  # module.vpc_b.aws_route.this_routes will be destroyed
+  - resource "aws_route" "this_routes" {
+      - destination_cidr_block    = "10.2.32.0/20" -> null
+      - id                        = "r-rtb-05c873edcf355e4a1943240730" -> null
+      - origin                    = "CreateRoute" -> null
+      - route_table_id            = "rtb-05c873edcf355e4a1" -> null
+      - state                     = "active" -> null
+      - vpc_peering_connection_id = "pcx-0624439ec5fdbae39" -> null
+    }
+
+  # module.vpc_b.aws_route_table.private[0] will be destroyed
+  - resource "aws_route_table" "private" {
+      - arn              = "arn:aws:ec2:eu-west-1:089633309135:route-table/rtb-05c873edcf355e4a1" -> null
+      - id               = "rtb-05c873edcf355e4a1" -> null
+      - owner_id         = "089633309135" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "10.2.32.0/20"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = ""
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = ""
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = "pcx-0624439ec5fdbae39"
+            },
+        ] -> null
+      - tags             = {} -> null
+      - tags_all         = {} -> null
+      - vpc_id           = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_route_table.public[0] will be destroyed
+  - resource "aws_route_table" "public" {
+      - arn              = "arn:aws:ec2:eu-west-1:089633309135:route-table/rtb-0855567647bdc1f55" -> null
+      - id               = "rtb-0855567647bdc1f55" -> null
+      - owner_id         = "089633309135" -> null
+      - propagating_vgws = [] -> null
+      - route            = [] -> null
+      - tags             = {} -> null
+      - tags_all         = {} -> null
+      - vpc_id           = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_route_table_association.private_assosiaciton[0] will be destroyed
+  - resource "aws_route_table_association" "private_assosiaciton" {
+      - id             = "rtbassoc-031e85f22a62bca21" -> null
+      - route_table_id = "rtb-05c873edcf355e4a1" -> null
+      - subnet_id      = "subnet-0c1b1589fb743dc49" -> null
+    }
+
+  # module.vpc_b.aws_route_table_association.private_assosiaciton[1] will be destroyed
+  - resource "aws_route_table_association" "private_assosiaciton" {
+      - id             = "rtbassoc-020af4637bce4bf65" -> null
+      - route_table_id = "rtb-05c873edcf355e4a1" -> null
+      - subnet_id      = "subnet-0f9253920a24d8a6b" -> null
+    }
+
+  # module.vpc_b.aws_route_table_association.public_assosiaciton[0] will be destroyed
+  - resource "aws_route_table_association" "public_assosiaciton" {
+      - id             = "rtbassoc-00cbc18266900e5d8" -> null
+      - route_table_id = "rtb-0855567647bdc1f55" -> null
+      - subnet_id      = "subnet-02194acc4453c6555" -> null
+    }
+
+  # module.vpc_b.aws_route_table_association.public_assosiaciton[1] will be destroyed
+  - resource "aws_route_table_association" "public_assosiaciton" {
+      - id             = "rtbassoc-0eaf959387cdf9f13" -> null
+      - route_table_id = "rtb-0855567647bdc1f55" -> null
+      - subnet_id      = "subnet-0c68212ffae06731e" -> null
+    }
+
+  # module.vpc_b.aws_subnet.pri_sub[0] will be destroyed
+  - resource "aws_subnet" "pri_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:089633309135:subnet/subnet-0c1b1589fb743dc49" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1c" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.1.32.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0c1b1589fb743dc49" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_subnet.pri_sub[1] will be destroyed
+  - resource "aws_subnet" "pri_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:089633309135:subnet/subnet-0f9253920a24d8a6b" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1c" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.1.48.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0f9253920a24d8a6b" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_subnet.pub_sub[0] will be destroyed
+  - resource "aws_subnet" "pub_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:089633309135:subnet/subnet-02194acc4453c6555" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1c" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.1.0.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-02194acc4453c6555" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_subnet.pub_sub[1] will be destroyed
+  - resource "aws_subnet" "pub_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-1:089633309135:subnet/subnet-0c68212ffae06731e" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-1c" -> null
+      - availability_zone_id                           = "euw1-az2" -> null
+      - cidr_block                                     = "10.1.16.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-0c68212ffae06731e" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0fd583869daf5bc7d" -> null
+    }
+
+  # module.vpc_b.aws_vpc.vpc will be destroyed
+  - resource "aws_vpc" "vpc" {
+      - arn                                  = "arn:aws:ec2:eu-west-1:089633309135:vpc/vpc-0fd583869daf5bc7d" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.1.0.0/16" -> null
+      - default_network_acl_id               = "acl-07286b1b3f976ed60" -> null
+      - default_route_table_id               = "rtb-0cdb51f27440989f4" -> null
+      - default_security_group_id            = "sg-0a1a7cca3946a9d2a" -> null
+      - dhcp_options_id                      = "dopt-0a396fe61a55f742f" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-0fd583869daf5bc7d" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0cdb51f27440989f4" -> null
+      - owner_id                             = "089633309135" -> null
+      - tags                                 = {} -> null
+      - tags_all                             = {} -> null
+    }
+
+  # module.vpc_c.aws_route.this_routes will be destroyed
+  - resource "aws_route" "this_routes" {
+      - destination_cidr_block    = "10.1.32.0/20" -> null
+      - id                        = "r-rtb-0f7cd6dd01b742c2228674781" -> null
+      - origin                    = "CreateRoute" -> null
+      - route_table_id            = "rtb-0f7cd6dd01b742c22" -> null
+      - state                     = "active" -> null
+      - vpc_peering_connection_id = "pcx-0624439ec5fdbae39" -> null
+    }
+
+  # module.vpc_c.aws_route_table.private[0] will be destroyed
+  - resource "aws_route_table" "private" {
+      - arn              = "arn:aws:ec2:eu-west-2:089633309135:route-table/rtb-0f7cd6dd01b742c22" -> null
+      - id               = "rtb-0f7cd6dd01b742c22" -> null
+      - owner_id         = "089633309135" -> null
+      - propagating_vgws = [] -> null
+      - route            = [
+          - {
+              - carrier_gateway_id         = ""
+              - cidr_block                 = "10.1.32.0/20"
+              - core_network_arn           = ""
+              - destination_prefix_list_id = ""
+              - egress_only_gateway_id     = ""
+              - gateway_id                 = ""
+              - ipv6_cidr_block            = ""
+              - local_gateway_id           = ""
+              - nat_gateway_id             = ""
+              - network_interface_id       = ""
+              - transit_gateway_id         = ""
+              - vpc_endpoint_id            = ""
+              - vpc_peering_connection_id  = "pcx-0624439ec5fdbae39"
+            },
+        ] -> null
+      - tags             = {} -> null
+      - tags_all         = {} -> null
+      - vpc_id           = "vpc-0806fa543d14a70a9" -> null
+    }
+
+  # module.vpc_c.aws_route_table_association.private_assosiaciton[0] will be destroyed
+  - resource "aws_route_table_association" "private_assosiaciton" {
+      - id             = "rtbassoc-0aca568ee95ee2b55" -> null
+      - route_table_id = "rtb-0f7cd6dd01b742c22" -> null
+      - subnet_id      = "subnet-07ad1fb676affdfbd" -> null
+    }
+
+  # module.vpc_c.aws_route_table_association.private_assosiaciton[1] will be destroyed
+  - resource "aws_route_table_association" "private_assosiaciton" {
+      - id             = "rtbassoc-0f0b1f96a006b90d8" -> null
+      - route_table_id = "rtb-0f7cd6dd01b742c22" -> null
+      - subnet_id      = "subnet-03a06bec073c3c267" -> null
+    }
+
+  # module.vpc_c.aws_subnet.pri_sub[0] will be destroyed
+  - resource "aws_subnet" "pri_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-2:089633309135:subnet/subnet-07ad1fb676affdfbd" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-2a" -> null
+      - availability_zone_id                           = "euw2-az2" -> null
+      - cidr_block                                     = "10.2.32.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-07ad1fb676affdfbd" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0806fa543d14a70a9" -> null
+    }
+
+  # module.vpc_c.aws_subnet.pri_sub[1] will be destroyed
+  - resource "aws_subnet" "pri_sub" {
+      - arn                                            = "arn:aws:ec2:eu-west-2:089633309135:subnet/subnet-03a06bec073c3c267" -> null
+      - assign_ipv6_address_on_creation                = false -> null
+      - availability_zone                              = "eu-west-2a" -> null
+      - availability_zone_id                           = "euw2-az2" -> null
+      - cidr_block                                     = "10.2.48.0/20" -> null
+      - enable_dns64                                   = false -> null
+      - enable_lni_at_device_index                     = 0 -> null
+      - enable_resource_name_dns_a_record_on_launch    = false -> null
+      - enable_resource_name_dns_aaaa_record_on_launch = false -> null
+      - id                                             = "subnet-03a06bec073c3c267" -> null
+      - ipv6_native                                    = false -> null
+      - map_customer_owned_ip_on_launch                = false -> null
+      - map_public_ip_on_launch                        = false -> null
+      - owner_id                                       = "089633309135" -> null
+      - private_dns_hostname_type_on_launch            = "ip-name" -> null
+      - tags                                           = {} -> null
+      - tags_all                                       = {} -> null
+      - vpc_id                                         = "vpc-0806fa543d14a70a9" -> null
+    }
+
+  # module.vpc_c.aws_vpc.vpc will be destroyed
+  - resource "aws_vpc" "vpc" {
+      - arn                                  = "arn:aws:ec2:eu-west-2:089633309135:vpc/vpc-0806fa543d14a70a9" -> null
+      - assign_generated_ipv6_cidr_block     = false -> null
+      - cidr_block                           = "10.2.0.0/16" -> null
+      - default_network_acl_id               = "acl-0dbf9afc1e60f169b" -> null
+      - default_route_table_id               = "rtb-0244520bedba88c00" -> null
+      - default_security_group_id            = "sg-0976305b16dd954b9" -> null
+      - dhcp_options_id                      = "dopt-08df1a09fcb787748" -> null
+      - enable_dns_hostnames                 = true -> null
+      - enable_dns_support                   = true -> null
+      - enable_network_address_usage_metrics = false -> null
+      - id                                   = "vpc-0806fa543d14a70a9" -> null
+      - instance_tenancy                     = "default" -> null
+      - ipv6_netmask_length                  = 0 -> null
+      - main_route_table_id                  = "rtb-0244520bedba88c00" -> null
+      - owner_id                             = "089633309135" -> null
+      - tags                                 = {} -> null
+      - tags_all                             = {} -> null
+    }
+
+Plan: 0 to add, 0 to change, 23 to destroy.
+
+Changes to Outputs:
+  - vpc_b_id = "vpc-0fd583869daf5bc7d" -> null
+  - vpc_c_id = "vpc-0806fa543d14a70a9" -> null
+╷
+│ Warning: Reference to undefined provider
+│ 
+│   on main.tf line 24, in module "vpc_b":
+│   24:    aws     = aws.peer
+│ 
+│ There is no explicit declaration for local provider name "aws" in module.vpc_b, so Terraform is assuming you mean to pass a
+│ configuration for "hashicorp/aws".
+│ 
+│ If you also control the child module, add a required_providers entry named "aws" with the source address "hashicorp/aws".
+│ 
+│ (and one more similar warning elsewhere)
+╵
+
+Do you really want to destroy all resources?
+  Terraform will destroy all your managed infrastructure, as shown above.
+  There is no undo. Only 'yes' will be accepted to confirm.
+
+  Enter a value: yes
+
+module.single_account_multi_region.aws_vpc_peering_connection_options.accepter: Destroying... [id=pcx-0624439ec5fdbae39]
+module.single_account_multi_region.aws_vpc_peering_connection_options.accepter: Destruction complete after 0s
+module.vpc_c.aws_route_table_association.private_assosiaciton[1]: Destroying... [id=rtbassoc-0f0b1f96a006b90d8]
+module.vpc_c.aws_route_table_association.private_assosiaciton[0]: Destroying... [id=rtbassoc-0aca568ee95ee2b55]
+module.single_account_multi_region.aws_vpc_peering_connection_options.this: Destroying... [id=pcx-0624439ec5fdbae39]
+module.vpc_c.aws_route.this_routes: Destroying... [id=r-rtb-0f7cd6dd01b742c2228674781]
+module.single_account_multi_region.aws_vpc_peering_connection_options.this: Destruction complete after 0s
+module.single_account_multi_region.aws_vpc_peering_connection_accepter.peer_accepter: Destroying... [id=pcx-0624439ec5fdbae39]
+module.single_account_multi_region.aws_vpc_peering_connection_accepter.peer_accepter: Destruction complete after 0s
+module.vpc_b.aws_route_table_association.private_assosiaciton[0]: Destroying... [id=rtbassoc-031e85f22a62bca21]
+module.vpc_b.aws_route_table_association.private_assosiaciton[1]: Destroying... [id=rtbassoc-020af4637bce4bf65]
+module.vpc_b.aws_route_table_association.public_assosiaciton[1]: Destroying... [id=rtbassoc-0eaf959387cdf9f13]
+module.vpc_b.aws_route_table_association.public_assosiaciton[0]: Destroying... [id=rtbassoc-00cbc18266900e5d8]
+module.vpc_b.aws_route.this_routes: Destroying... [id=r-rtb-05c873edcf355e4a1943240730]
+module.vpc_c.aws_route_table_association.private_assosiaciton[1]: Destruction complete after 1s
+module.vpc_c.aws_route_table_association.private_assosiaciton[0]: Destruction complete after 1s
+module.vpc_c.aws_subnet.pri_sub[0]: Destroying... [id=subnet-07ad1fb676affdfbd]
+module.vpc_c.aws_subnet.pri_sub[1]: Destroying... [id=subnet-03a06bec073c3c267]
+module.vpc_c.aws_route.this_routes: Destruction complete after 1s
+module.vpc_c.aws_route_table.private[0]: Destroying... [id=rtb-0f7cd6dd01b742c22]
+module.vpc_c.aws_subnet.pri_sub[0]: Destruction complete after 1s
+module.vpc_c.aws_subnet.pri_sub[1]: Destruction complete after 1s
+module.vpc_c.aws_route_table.private[0]: Destruction complete after 1s
+module.vpc_b.aws_route_table_association.private_assosiaciton[1]: Destruction complete after 2s
+module.vpc_b.aws_route_table_association.public_assosiaciton[1]: Destruction complete after 2s
+module.vpc_b.aws_route_table_association.public_assosiaciton[0]: Destruction complete after 2s
+module.vpc_b.aws_route_table_association.private_assosiaciton[0]: Destruction complete after 2s
+module.vpc_b.aws_route.this_routes: Destruction complete after 2s
+module.vpc_b.aws_route_table.public[0]: Destroying... [id=rtb-0855567647bdc1f55]
+module.vpc_b.aws_subnet.pub_sub[0]: Destroying... [id=subnet-02194acc4453c6555]
+module.vpc_b.aws_subnet.pri_sub[1]: Destroying... [id=subnet-0f9253920a24d8a6b]
+module.vpc_b.aws_subnet.pub_sub[1]: Destroying... [id=subnet-0c68212ffae06731e]
+module.single_account_multi_region.aws_vpc_peering_connection.this: Destroying... [id=pcx-0624439ec5fdbae39]
+module.vpc_b.aws_subnet.pri_sub[0]: Destroying... [id=subnet-0c1b1589fb743dc49]
+module.vpc_b.aws_route_table.private[0]: Destroying... [id=rtb-05c873edcf355e4a1]
+module.vpc_b.aws_subnet.pub_sub[0]: Destruction complete after 0s
+module.vpc_b.aws_subnet.pri_sub[1]: Destruction complete after 1s
+module.vpc_b.aws_subnet.pub_sub[1]: Destruction complete after 1s
+module.vpc_b.aws_route_table.public[0]: Destruction complete after 1s
+module.vpc_b.aws_route_table.private[0]: Destruction complete after 1s
+module.vpc_b.aws_subnet.pri_sub[0]: Destruction complete after 1s
+module.single_account_multi_region.aws_vpc_peering_connection.this: Destruction complete after 5s
+module.vpc_c.aws_vpc.vpc: Destroying... [id=vpc-0806fa543d14a70a9]
+module.vpc_b.aws_vpc.vpc: Destroying... [id=vpc-0fd583869daf5bc7d]
+module.vpc_b.aws_vpc.vpc: Destruction complete after 0s
+module.vpc_c.aws_vpc.vpc: Destruction complete after 0s
+
+Destroy complete! Resources: 23 destroyed.
